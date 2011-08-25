@@ -1,0 +1,9 @@
+
+*.pdb
+[Oo]bj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+*.suo
+*.ncp
+*.sbr

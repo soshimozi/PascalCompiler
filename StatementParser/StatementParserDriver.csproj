@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C46465AD-E6EB-4F70-8BA4-14B04D4F50F9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PascalCompiler.StatementParser</RootNamespace>
+    <AssemblyName>PascalCompiler.StatementParser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AATree.cs" />
+    <Compile Include="BackendManager.cs" />
+    <Compile Include="BinaryFormatter.cs" />
+    <Compile Include="CharCodeMapFactory.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="DataValue.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="EOFToken.cs" />
+    <Compile Include="ErrorEventArgs.cs" />
+    <Compile Include="ErrorToken.cs" />
+    <Compile Include="IdentifierRedefinedException.cs" />
+    <Compile Include="IInputBuffer.cs" />
+    <Compile Include="IntermediateCode.cs" />
+    <Compile Include="InvalidTypeException.cs" />
+    <Compile Include="IOutputBuffer.cs" />
+    <Compile Include="LineNumList.cs" />
+    <Compile Include="LineNumNode.cs" />
+    <Compile Include="NestingTooDeepException.cs" />
+    <Compile Include="NumberToken.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservedWord.cs" />
+    <Compile Include="ReservedWordDictionary.cs" />
+    <Compile Include="RuntimeErrorArgs.cs" />
+    <Compile Include="RuntimeStack.cs" />
+    <Compile Include="Scanner.cs" />
+    <Compile Include="SharedProperties.cs" />
+    <Compile Include="SpecialToken.cs" />
+    <Compile Include="StagingParser.cs" />
+    <Compile Include="StringToken.cs" />
+    <Compile Include="Symtab.cs" />
+    <Compile Include="SymtabNode.cs" />
+    <Compile Include="SymtabStack.cs" />
+    <Compile Include="TBackend.cs" />
+    <Compile Include="TDataValue.cs" />
+    <Compile Include="TDefn.cs" />
+    <Compile Include="TDefnCode.cs" />
+    <Compile Include="TErrorCode.cs" />
+    <Compile Include="TExecutor.cs" />
+    <Compile Include="TextScanner.cs" />
+    <Compile Include="TextBuffer.cs" />
+    <Compile Include="TListBuffer.cs" />
+    <Compile Include="TLocalIds.cs" />
+    <Compile Include="TRoutineCode.cs" />
+    <Compile Include="TTextOutBuffer.cs" />
+    <Compile Include="TToken.cs" />
+    <Compile Include="TType.cs" />
+    <Compile Include="UndefinedIdentifierException.cs" />
+    <Compile Include="WhereClause.cs" />
+    <Compile Include="WordToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source.pas">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
